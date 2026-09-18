@@ -1,0 +1,14 @@
+# Temporary and system files
+*.tmp
+*.temp
+~$*
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Power BI Cloud FinOps Dashboard - Interactive Layout Guide</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Dark Theme Styles */
+    body { background-color: #0B1120; color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .card-bg { background-color: #1E293B; border: 1px solid #334155; }
+    .tab-active { background-color: #0284C7; color: #FFFFFF; font-weight: 600; }
+    .tab-inactive { background-color: #1E293B; color: #94A3B8; }
+    .tab-inactive:hover { background-color: #334155; color: #F8FAFC; }
+    .badge-guide { background: rgba(14, 165, 233, 0.15); border: 1px dashed #0284C7; color: #38BDF8; }
+  </style>
+</head>
+<body class="p-4 md:p-6 antialiased">
+
+  <!-- Main Container -->
+  <div class="max-w-6xl mx-auto space-y-6">
+
+    <!-- Top Info Banner -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between bg-gradient-to-r from-slate-900 to-slate-800 p-5 rounded-2xl border border-slate-700 shadow-lg gap-4">
+      <div>
+        <div class="flex items-center gap-2 text-cyan-400 font-semibold text-xs uppercase tracking-wider">
+          <span>⚡ Power BI Canvas Layout Map</span>
+          <span class="bg-cyan-950 text-cyan-400 px-2 py-0.5 rounded text-[10px] border border-cyan-800">16:9 Aspect Ratio</span>
+        </div>
+        <h1 class="text-xl md:text-2xl font-bold text-white mt-1">Enterprise Cloud FinOps & Telemetry Dashboard</h1>
+        <p class="text-slate-400 text-xs mt-1">Select a page below to view the exact layout, chart placement, and field configuration.</p>
+      </div>
+      
+      <!-- Page Navigation Tabs -->
+      <div class="flex flex-wrap gap-2 p-1.5 bg-slate-950/80 rounded-xl border border-slate-800">
+        <button onclick="switchTab('page1')" id="btn-page1" class="tab-active px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
+          <span>📊</span> Page 1: FinOps Overview
+        </button>
+        <button onclick="switchTab('page2')" id="btn-page2" class="tab-inactive px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
+          <span>⚡</span> Page 2: APM Reliability
+        </button>
+        <button onclick="switchTab('page3')" id="btn-page3" class="tab-inactive px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
+          <span>🚨</span> Page 3: Zombie Action Center
+        </button>
+      </div>
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- TAB 1: PAGE 1 FINOPS OVERVIEW                                   -->
+    <!-- ============================================================== -->
+    <div id="tab-page1" class="space-y-4">
+      
+      <!-- Dashboard Top Header Bar -->
+      <div class="card-bg p-4 rounded-xl flex flex-col md:flex-row justify-between items-center gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 font-bold">☁️</div>
+          <div>
+            <div class="text-sm font-bold text-white tracking-wide">ENTERPRISE CLOUD FINOPS & INFRASTRUCTURE OVERVIEW</div>
+            <div class="text-[11px] text-slate-400">AWS & Azure 60-Day Telemetry Telemetry Monitoring Fleet</div>
+          </div>
+        </div>
+        <!-- Mock Filters -->
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-slate-400">Filters:</span>
+          <div class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-300">Provider: All ▾</div>
+          <div class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-300">Environment: All ▾</div>
+        </div>
+      </div>
+
+      <!-- 4 Top KPI Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- KPI 1 -->
+        <div class="card-bg p-4 rounded-xl border-l-4 border-l-cyan-500 relative group cursor-pointer hover:border-cyan-400 transition-all" onclick="showHelp('Card 1: Total Fleet Spend', 'Visual Type: Card\nField: [Total Spend]\nFormat: Currency ($)\nTarget Value: $2,998.72')">
+          <div class="text-xs text-slate-400 font-medium">TOTAL FLEET SPEND</div>
+          <div class="text-2xl font-extrabold text-cyan-400 mt-1">$2,998.72</div>
+          <div class="text-[11px] text-slate-400 mt-1.5 flex items-center gap-1">
+            <span class="text-emerald-400">●</span> 12 Instances Monitored
+          </div>
+          <div class="text-[10px] text-cyan-400/80 font-mono mt-2 bg-cyan-950/40 p-1 rounded">DAX: [Total Spend]</div>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="card-bg p-4 rounded-xl border-l-4 border-l-rose-500 relative group cursor-pointer hover:border-rose-400 transition-all" onclick="showHelp('Card 2: Identified Cloud Waste', 'Visual Type: Card\nField: [Identified Waste]\nFormat: Currency ($)\nTarget Value: $1,279.61\nStyling: Callout Value formatted in Bright Red!')">
+          <div class="text-xs text-rose-300 font-medium flex items-center justify-between">
+            <span>IDENTIFIED CLOUD WASTE</span>
+            <span class="bg-rose-950 text-rose-400 text-[10px] px-1.5 py-0.5 rounded border border-rose-800">ALERT</span>
+          </div>
+          <div class="text-2xl font-extrabold text-rose-500 mt-1">$1,279.61</div>
+          <div class="text-[11px] text-rose-400/80 mt-1.5">42.7% of Total Cloud Bill!</div>
+          <div class="text-[10px] text-rose-400 font-mono mt-2 bg-rose-950/40 p-1 rounded">DAX: [Identified Waste]</div>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="card-bg p-4 rounded-xl border-l-4 border-l-emerald-500 relative group cursor-pointer hover:border-emerald-400 transition-all" onclick="showHelp('Card 3: Potential Savings', 'Visual Type: Card\nField: [Potential Savings Pct]\nFormat: Percentage (%)\nTarget Value: 42.7%')">
+          <div class="text-xs text-slate-400 font-medium">POTENTIAL SAVINGS</div>
+          <div class="text-2xl font-extrabold text-emerald-400 mt-1">42.7%</div>
+          <div class="text-[11px] text-emerald-400 mt-1.5 flex items-center gap-1">
+            <span>↑</span> $7,784 Annualized Run-Rate
+          </div>
+          <div class="text-[10px] text-emerald-400 font-mono mt-2 bg-emerald-950/40 p-1 rounded">DAX: [Potential Savings Pct]</div>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="card-bg p-4 rounded-xl border-l-4 border-l-amber-500 relative group cursor-pointer hover:border-amber-400 transition-all" onclick="showHelp('Card 4: Zombie Instances', 'Visual Type: Card\nField: [Zombie Server Count]\nFormat: Whole Number\nTarget Value: 3 Instances')">
+          <div class="text-xs text-slate-400 font-medium">ZOMBIE INSTANCES</div>
+          <div class="text-2xl font-extrabold text-amber-400 mt-1">3 <span class="text-xs font-normal text-slate-400">Servers</span></div>
+          <div class="text-[11px] text-amber-300 mt-1.5">0% Traffic (CPU &lt; 3%)</div>
+          <div class="text-[10px] text-amber-400 font-mono mt-2 bg-amber-950/40 p-1 rounded">DAX: [Zombie Server Count]</div>
+        </div>
+
+      </div>
+
+      <!-- Middle Charts Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+        
+        <!-- Donut Chart (5 Cols) -->
+        <div class="lg:col-span-5 card-bg p-4 rounded-xl cursor-pointer hover:border-slate-500 transition-all" onclick="showHelp('Donut Chart: Spend by Cloud Provider', 'Visual: Donut Chart\nLegend: cloud_provider\nValues: [Total Spend]\nColors: AWS (#38BDF8), Azure (#06B6D4)\nResult: AWS ~78%, Azure ~22%')">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-xs font-bold text-slate-200">SPEND BY CLOUD PROVIDER</span>
+            <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900">Donut Chart</span>
+          </div>
+          
+          <div class="flex items-center justify-around py-4">
+            <!-- Simulated Donut SVG -->
+            <div class="relative w-32 h-32 flex items-center justify-center">
+              <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                <path class="text-slate-800" stroke-width="6" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <!-- Azure Segment ~22% -->
+                <path class="text-cyan-400" stroke-dasharray="22, 100" stroke-width="6" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <!-- AWS Segment ~78% -->
+                <path class="text-sky-500" stroke-dasharray="78, 100" stroke-dashoffset="-22" stroke-width="6" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <div class="absolute text-center">
+                <div class="text-sm font-bold text-white">$3.0K</div>
+                <div class="text-[9px] text-slate-400">Total</div>
+              </div>
+            </div>
+            <!-- Legend -->
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-sky-500"></div>
+                <span class="text-slate-300">AWS: $2,347 (78.3%)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-cyan-400"></div>
+                <span class="text-slate-300">Azure: $651 (21.7%)</span>
+              </div>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 border-t border-slate-700/60 pt-2 flex justify-between">
+            <span>Legend: <code class="text-cyan-300">cloud_provider</code></span>
+            <span>Values: <code class="text-cyan-300">[Total Spend]</code></span>
+          </div>
+        </div>
+
+        <!-- Clustered Column Chart (7 Cols) -->
+        <div class="lg:col-span-7 card-bg p-4 rounded-xl cursor-pointer hover:border-slate-500 transition-all" onclick="showHelp('Clustered Column: Spend vs Waste by Environment', 'Visual: Clustered Column Chart\nX-axis: environment (Dev, Prod, Stg)\nY-axis: [Total Spend] (Blue), [Identified Waste] (Red)\nInsight: Development has $1,280 Spend and $1,280 Waste (100% loss!)')">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-xs font-bold text-slate-200">TOTAL SPEND VS IDENTIFIED WASTE BY ENVIRONMENT</span>
+            <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900">Clustered Column</span>
+          </div>
+
+          <!-- Bar Chart Representation -->
+          <div class="space-y-3 py-2">
+            <!-- Dev -->
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-300 font-semibold">Development (100% Waste!)</span>
+                <span class="text-rose-400">$1,279.61 Waste / $1,279.61 Spend</span>
+              </div>
+              <div class="w-full bg-slate-800 h-6 rounded flex overflow-hidden">
+                <div class="bg-rose-500 h-full text-[10px] font-bold text-white flex items-center px-2" style="width: 100%;">
+                  100% UNUSED ZOMBIE RUNTIME
+                </div>
+              </div>
+            </div>
+
+            <!-- Prod -->
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-300 font-semibold">Production (0% Waste)</span>
+                <span class="text-sky-400">$1,598.07 Spend / $0 Waste</span>
+              </div>
+              <div class="w-full bg-slate-800 h-6 rounded flex overflow-hidden">
+                <div class="bg-sky-500 h-full text-[10px] font-bold text-white flex items-center px-2" style="width: 80%;">
+                  100% HEALTHY WORKLOADS
+                </div>
+              </div>
+            </div>
+
+            <!-- Staging -->
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-300 font-semibold">Staging (0% Waste)</span>
+                <span class="text-sky-400">$121.04 Spend / $0 Waste</span>
+              </div>
+              <div class="w-full bg-slate-800 h-6 rounded flex overflow-hidden">
+                <div class="bg-sky-600 h-full text-[10px] font-bold text-white flex items-center px-2" style="width: 25%;">
+                  Normal Pre-prod
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[11px] text-slate-400 border-t border-slate-700/60 pt-2 flex justify-between">
+            <span>X-Axis: <code class="text-cyan-300">environment</code></span>
+            <span>Y-Axis: <code class="text-cyan-300">[Total Spend], [Identified Waste]</code></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Trend Chart (Full Width) -->
+      <div class="card-bg p-4 rounded-xl cursor-pointer hover:border-slate-500 transition-all" onclick="showHelp('Area Chart: Daily Spend & Cumulative Waste Trend', 'Visual: Area Chart or Line Chart\nX-axis: date\nY-axis: [Total Spend] (Daily spend rate)\nSecondary / Area: [Cumulative Wasted Spend]\nInsight: Shows waste steadily accumulating to $1.28k over 60 days.')">
+        <div class="flex justify-between items-center mb-2">
+          <div>
+            <span class="text-xs font-bold text-slate-200">60-DAY FLEET RUN-RATE & CUMULATIVE WASTE TREND</span>
+            <div class="text-[11px] text-slate-400">Daily burn rate ($50/day) with continuous waste bleed accumulation</div>
+          </div>
+          <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900">Area / Line Chart</span>
+        </div>
+
+        <!-- Simulated Trend Wave -->
+        <div class="h-28 flex items-end gap-1.5 pt-4 px-2 border-b border-slate-700">
+          <div class="flex-1 bg-gradient-to-t from-rose-500/20 to-rose-500/80 rounded-t" style="height: 15%"></div>
+          <div class="flex-1 bg-gradient-to-t from-rose-500/20 to-rose-500/80 rounded-t" style="height: 25%"></div>
+          <div class="flex-1 bg-gradient-to-t from-rose-500/20 to-rose-500/80 rounded-t" style="height: 38%"></div>
+          <div class="flex-1 bg-gradient-to-t from-rose-500/20 to-rose-500/80 rounded-t" style="height: 52%"></div>
+          <div class="flex-1 bg-gradient-to-t from-rose-500/20 to-rose-500/80 rounded-t" style="height: 68%"></div>
+          <div class="flex-1 bg-gradient-to-t from-rose-500/20 to-rose-500/80 rounded-t" style="height: 82%"></div>
+          <div class="flex-1 bg-gradient-to-t from-rose-500/20 to-rose-500/80 rounded-t" style="height: 100%"></div>
+        </div>
+        <div class="flex justify-between text-[10px] text-slate-400 mt-1 px-2">
+          <span>Day 1 (July)</span>
+          <span>Day 15</span>
+          <span>Day 30</span>
+          <span>Day 45</span>
+          <span class="text-rose-400 font-bold">Day 60: $1,279.61 Waste Bleed</span>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- TAB 2: PAGE 2 APM & RELIABILITY                                 -->
+    <!-- ============================================================== -->
+    <div id="tab-page2" class="space-y-4 hidden">
+      
+      <!-- APM Header -->
+      <div class="card-bg p-4 rounded-xl flex justify-between items-center">
+        <div>
+          <div class="text-sm font-bold text-white tracking-wide">APPLICATION PERFORMANCE MONITORING (APM) & RELIABILITY</div>
+          <div class="text-[11px] text-slate-400">P95 Latency Degradation, Memory Leaks, and SLA Compliance Tracking</div>
+        </div>
+        <div class="px-3 py-1 bg-emerald-950 border border-emerald-800 text-emerald-400 rounded-lg text-xs font-semibold">
+          SLA Target: &gt; 99.0%
+        </div>
+      </div>
+
+      <!-- APM KPI Row -->
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+        <div class="card-bg p-4 rounded-xl border-l-4 border-l-amber-500">
+          <div class="text-xs text-slate-400">FLEET SLA COMPLIANCE</div>
+          <div class="text-2xl font-bold text-amber-400 mt-1">94.3%</div>
+          <div class="text-[11px] text-rose-400 mt-1">Below 99.0% Target</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-2">[Fleet SLA Compliance]</div>
+        </div>
+        <div class="card-bg p-4 rounded-xl border-l-4 border-l-cyan-500">
+          <div class="text-xs text-slate-400">AVG P95 LATENCY</div>
+          <div class="text-2xl font-bold text-cyan-400 mt-1">103.8 <span class="text-xs">ms</span></div>
+          <div class="text-[11px] text-slate-400 mt-1">Healthy Baseline: &lt; 200ms</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-2">[Avg P95 Latency]</div>
+        </div>
+        <div class="card-bg p-4 rounded-xl border-l-4 border-l-rose-500">
+          <div class="text-xs text-slate-400">TOTAL 5XX SERVER ERRORS</div>
+          <div class="text-2xl font-bold text-rose-500 mt-1">14,997</div>
+          <div class="text-[11px] text-rose-400 mt-1">Gateway Timeouts (504)</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-2">[Total 5xx Errors]</div>
+        </div>
+        <div class="card-bg p-4 rounded-xl border-l-4 border-l-purple-500">
+          <div class="text-xs text-slate-400">COST PER 1M REQUESTS</div>
+          <div class="text-2xl font-bold text-purple-400 mt-1">$1.20</div>
+          <div class="text-[11px] text-slate-400 mt-1">Unit Economic Metric</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-2">[Cost per 1M Requests]</div>
+        </div>
+      </div>
+
+      <!-- APM Charts -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        
+        <!-- Service SLA Compliance Bar Chart -->
+        <div class="card-bg p-4 rounded-xl">
+          <div class="text-xs font-bold text-slate-200 mb-2">SERVICE SLA COMPLIANCE RANKING</div>
+          <div class="space-y-2.5 text-xs">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-rose-400 font-bold">recommendation-engine (CPU Spikes)</span>
+                <span class="text-rose-400 font-bold">50.4%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-rose-500 h-full rounded" style="width: 50.4%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-amber-400 font-bold">payment-gateway (Memory Leak)</span>
+                <span class="text-amber-400 font-bold">90.4%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-amber-500 h-full rounded" style="width: 90.4%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-emerald-400">auth-service</span>
+                <span class="text-emerald-400 font-bold">100.0%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-emerald-500 h-full rounded" style="width: 100%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-emerald-400">orders-db &amp; catalog-api</span>
+                <span class="text-emerald-400 font-bold">100.0%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-3 rounded"><div class="bg-emerald-500 h-full rounded" style="width: 100%"></div></div>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-4 border-t border-slate-700/60 pt-2">
+            Visual: <code class="text-cyan-300">Clustered Bar Chart</code> (Y: <code class="text-cyan-300">service_name</code> | X: <code class="text-cyan-300">[Fleet SLA Compliance]</code>)
+          </div>
+        </div>
+
+        <!-- Payment Gateway Memory Leak Sawtooth Line Chart -->
+        <div class="card-bg p-4 rounded-xl">
+          <div class="text-xs font-bold text-slate-200 mb-1">PAYMENT-GATEWAY: MEMORY LEAK SAWTOOTH PATTERN</div>
+          <div class="text-[11px] text-slate-400 mb-3">RAM creeps up to 92% until server OOM crash &amp; restart</div>
+          
+          <div class="h-28 border-b border-slate-700 flex items-end gap-1 px-2">
+            <!-- Simulated repeating sawtooth wave -->
+            <div class="flex-1 bg-cyan-500/20 border-t-2 border-cyan-400 h-10"></div>
+            <div class="flex-1 bg-cyan-500/30 border-t-2 border-cyan-400 h-16"></div>
+            <div class="flex-1 bg-cyan-500/50 border-t-2 border-cyan-400 h-24"></div>
+            <div class="flex-1 bg-rose-500/60 border-t-2 border-rose-500 h-28"></div>
+            <div class="w-1 bg-rose-500 h-full"></div>
+            <div class="flex-1 bg-cyan-500/20 border-t-2 border-cyan-400 h-10"></div>
+            <div class="flex-1 bg-cyan-500/30 border-t-2 border-cyan-400 h-16"></div>
+            <div class="flex-1 bg-cyan-500/50 border-t-2 border-cyan-400 h-24"></div>
+            <div class="flex-1 bg-rose-500/60 border-t-2 border-rose-500 h-28"></div>
+          </div>
+          <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+            <span>RAM 42% (Normal)</span>
+            <span>RAM 65%</span>
+            <span class="text-rose-400 font-bold">RAM 92% (Crash &amp; Latency Spike!)</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-3 border-t border-slate-700/60 pt-2">
+            Visual: <code class="text-cyan-300">Line Chart</code> (X: <code class="text-cyan-300">timestamp</code> | Y: <code class="text-cyan-300">[Avg P95 Latency], [Avg Memory Utilization]</code>)
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- TAB 3: PAGE 3 ZOMBIE ACTION CENTER                              -->
+    <!-- ============================================================== -->
+    <div id="tab-page3" class="space-y-4 hidden">
+      
+      <!-- Action Banner -->
+      <div class="card-bg p-5 rounded-xl border border-rose-500/40 bg-gradient-to-r from-slate-900 to-rose-950/20 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-rose-400 text-sm font-bold uppercase tracking-wider">🎯 DEVOPS DECOMMISSION HIT-LIST</span>
+            <span class="bg-rose-500/20 text-rose-300 text-[10px] px-2 py-0.5 rounded border border-rose-500/30">Actionable Savings</span>
+          </div>
+          <div class="text-xl font-bold text-white mt-1">Immediate Bottom-Line Opportunity: $7,784/Year Recoverable</div>
+          <div class="text-xs text-slate-300 mt-1">Decommissioning these 3 idle development servers has zero impact on user production traffic.</div>
+        </div>
+        <div class="text-right">
+          <div class="text-xs text-slate-400">Total Wasted Fleet</div>
+          <div class="text-2xl font-extrabold text-rose-400">$1,279.61</div>
+          <div class="text-[11px] text-slate-400">60-Day Run-Rate</div>
+        </div>
+      </div>
+
+      <!-- Action Table Visual -->
+      <div class="card-bg p-4 rounded-xl overflow-x-auto">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-xs font-bold text-slate-200">ZOMBIE INSTANCE AUDIT TABLE (Filter: is_idle_zombie = 1)</span>
+          <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900">Table Visual</span>
+        </div>
+
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-slate-700 text-slate-400 font-semibold bg-slate-900/50">
+              <th class="p-3">Instance ID</th>
+              <th class="p-3">Service Name</th>
+              <th class="p-3">Type</th>
+              <th class="p-3">Avg CPU %</th>
+              <th class="p-3">Hourly Rate</th>
+              <th class="p-3 text-rose-400 font-bold">60-Day Waste ($)</th>
+              <th class="p-3 text-emerald-400 font-bold">Annual Savings ($)</th>
+              <th class="p-3">DevOps Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            <tr class="hover:bg-slate-800/40 transition-colors">
+              <td class="p-3 font-mono text-cyan-300">i-dev-sandbox-ml</td>
+              <td class="p-3 text-slate-200">ml-experiments</td>
+              <td class="p-3 text-slate-400">r5.2xlarge</td>
+              <td class="p-3 text-amber-400 font-bold">2.48%</td>
+              <td class="p-3 text-slate-300">$0.504</td>
+              <td class="p-3 text-rose-400 font-bold text-sm">$726.26</td>
+              <td class="p-3 text-emerald-400 font-bold text-sm">$4,418.00</td>
+              <td class="p-3"><span class="bg-rose-950 text-rose-400 px-2 py-0.5 rounded border border-rose-800 font-semibold text-[10px]">Decommission</span></td>
+            </tr>
+            <tr class="hover:bg-slate-800/40 transition-colors">
+              <td class="p-3 font-mono text-cyan-300">i-dev-test01</td>
+              <td class="p-3 text-slate-200">qa-testing</td>
+              <td class="p-3 text-slate-400">m5.xlarge</td>
+              <td class="p-3 text-amber-400 font-bold">2.50%</td>
+              <td class="p-3 text-slate-300">$0.192</td>
+              <td class="p-3 text-rose-400 font-bold text-sm">$276.67</td>
+              <td class="p-3 text-emerald-400 font-bold text-sm">$1,683.00</td>
+              <td class="p-3"><span class="bg-rose-950 text-rose-400 px-2 py-0.5 rounded border border-rose-800 font-semibold text-[10px]">Decommission</span></td>
+            </tr>
+            <tr class="hover:bg-slate-800/40 transition-colors">
+              <td class="p-3 font-mono text-cyan-300">vm-dev-legacy01</td>
+              <td class="p-3 text-slate-200">legacy-sync</td>
+              <td class="p-3 text-slate-400">Standard_D4s_v5</td>
+              <td class="p-3 text-amber-400 font-bold">2.49%</td>
+              <td class="p-3 text-slate-300">$0.192</td>
+              <td class="p-3 text-rose-400 font-bold text-sm">$276.67</td>
+              <td class="p-3 text-emerald-400 font-bold text-sm">$1,683.00</td>
+              <td class="p-3"><span class="bg-rose-950 text-rose-400 px-2 py-0.5 rounded border border-rose-800 font-semibold text-[10px]">Decommission</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-[11px] text-slate-400 mt-3 border-t border-slate-700/60 pt-2 flex justify-between">
+          <span>Table Fields: <code class="text-cyan-300">instance_id, service_name, instance_type, [Instance Wasted Spend], [Instance Annualized Waste]</code></span>
+          <span class="text-rose-300 font-semibold">Filter on visual: is_idle_zombie = 1</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Modal Popup / Tooltip Helper -->
+    <div id="help-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 max-w-md w-full space-y-4 shadow-2xl">
+        <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+          <h3 id="modal-title" class="font-bold text-white text-base">Visual Configuration Guide</h3>
+          <button onclick="closeHelp()" class="text-slate-400 hover:text-white text-lg">✕</button>
+        </div>
+        <pre id="modal-body" class="bg-slate-950 p-4 rounded-xl text-xs text-cyan-300 font-mono whitespace-pre-wrap leading-relaxed border border-slate-800"></pre>
+        <button onclick="closeHelp()" class="w-full py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl text-xs font-semibold">Close Guide</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.getElementById('tab-page1').classList.add('hidden');
+      document.getElementById('tab-page2').classList.add('hidden');
+      document.getElementById('tab-page3').classList.add('hidden');
+
+      document.getElementById('btn-page1').className = 'tab-inactive px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5';
+      document.getElementById('btn-page2').className = 'tab-inactive px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5';
+      document.getElementById('btn-page3').className = 'tab-inactive px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5';
+
+      document.getElementById('tab-' + tabId).classList.remove('hidden');
+      document.getElementById('btn-' + tabId).className = 'tab-active px-4 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5';
+    }
+
+    function showHelp(title, content) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-body').innerText = content;
+      document.getElementById('help-modal').classList.remove('hidden');
+    }
+
+    function closeHelp() {
+      document.getElementById('help-modal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

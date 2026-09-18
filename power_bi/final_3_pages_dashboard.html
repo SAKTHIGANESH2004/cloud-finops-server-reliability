@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Cloud FinOps & APM Platform - Final 3-Page Dashboard</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    body { background-color: #0B1120; color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .card-container { background-color: #1E293B; border: 1px solid #334155; border-radius: 0.75rem; }
+    .nav-btn-active { background-color: #0284C7; color: #FFFFFF; font-weight: 700; box-shadow: 0 0 15px rgba(2, 132, 199, 0.4); }
+    .nav-btn-inactive { background-color: #1E293B; color: #94A3B8; border: 1px solid #334155; }
+    .nav-btn-inactive:hover { background-color: #334155; color: #F8FAFC; }
+    .sawtooth-path { stroke-dasharray: 6; animation: dash 30s linear infinite; }
+  </style>
+</head>
+<body class="p-4 md:p-6 antialiased min-h-screen">
+
+  <div class="max-w-7xl mx-auto space-y-5">
+
+    <!-- ============================================================== -->
+    <!-- TOP MASTER NAVIGATION BAR                                       -->
+    <!-- ============================================================== -->
+    <header class="card-container p-4 flex flex-col lg:flex-row justify-between items-center gap-4 bg-slate-900/90 backdrop-blur border-slate-700">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center text-xl shadow-inner">
+          ☁️
+        </div>
+        <div>
+          <h1 class="text-base md:text-lg font-black tracking-wide text-white flex items-center gap-2">
+            ENTERPRISE CLOUD FINOPS &amp; APM PLATFORM
+            <span class="bg-cyan-950 text-cyan-400 text-[10px] px-2 py-0.5 rounded border border-cyan-800 font-mono">AWS + AZURE</span>
+          </h1>
+          <p class="text-xs text-slate-400">Multi-Cloud Infrastructure Telemetry &amp; Financial Cost Governance</p>
+        </div>
+      </div>
+
+      <!-- Live Page Tabs -->
+      <div class="flex items-center gap-2 bg-slate-950/80 p-1.5 rounded-xl border border-slate-800">
+        <button onclick="navigatePage(1)" id="tab-btn-1" class="nav-btn-active px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition-all">
+          <span>📊</span>
+          <span>Page 1: FinOps Overview</span>
+        </button>
+        <button onclick="navigatePage(2)" id="tab-btn-2" class="nav-btn-inactive px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition-all">
+          <span>⚡</span>
+          <span>Page 2: APM &amp; Reliability</span>
+        </button>
+        <button onclick="navigatePage(3)" id="tab-btn-3" class="nav-btn-inactive px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition-all">
+          <span>🚨</span>
+          <span>Page 3: Zombie Action</span>
+        </button>
+      </div>
+    </header>
+
+
+    <!-- ============================================================== -->
+    <!-- 📄 PAGE 1: FINOPS EXECUTIVE COST OVERVIEW                       -->
+    <!-- ============================================================== -->
+    <main id="page-1" class="space-y-5">
+      
+      <!-- Top Slicers Bar -->
+      <div class="flex flex-wrap items-center justify-between text-xs text-slate-400 px-1">
+        <div class="flex items-center gap-2">
+          <span class="font-semibold text-slate-300">Executive Slicers:</span>
+          <span class="bg-slate-800 px-2.5 py-1 rounded border border-slate-700 text-slate-200">Cloud Provider: All (AWS &amp; Azure)</span>
+          <span class="bg-slate-800 px-2.5 py-1 rounded border border-slate-700 text-slate-200">Date: Last 60 Days</span>
+        </div>
+        <div class="text-[11px] text-cyan-400">
+          ● All 12 Fleet Instances Active
+        </div>
+      </div>
+
+      <!-- 4 Top KPI Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Card 1 -->
+        <div class="card-container p-5 border-l-4 border-l-cyan-500 relative overflow-hidden group">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">TOTAL FLEET SPEND</div>
+          <div class="text-3xl font-black text-white mt-1">$2,998.72</div>
+          <div class="text-[11px] text-cyan-400 mt-2 flex items-center gap-1">
+            <span>📈</span> 17,292 Hourly Server Logs
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-cyan-300">[Total Fleet Spend]</code>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-container p-5 border-l-4 border-l-rose-500 relative overflow-hidden bg-gradient-to-br from-slate-900 to-rose-950/20">
+          <div class="flex justify-between items-center text-xs text-rose-300 font-semibold tracking-wider">
+            <span>IDENTIFIED CLOUD WASTE</span>
+            <span class="bg-rose-950/80 text-rose-400 text-[10px] px-2 py-0.5 rounded border border-rose-800 animate-pulse font-bold">ALERT</span>
+          </div>
+          <div class="text-3xl font-black text-rose-500 mt-1">$1,279.61</div>
+          <div class="text-[11px] text-rose-400 mt-2 flex items-center gap-1 font-semibold">
+            <span>⚠️</span> 42.7% of Total Cloud Bill!
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-rose-300">[Identified Cloud Waste]</code>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-container p-5 border-l-4 border-l-emerald-500 relative overflow-hidden">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">POTENTIAL SAVINGS</div>
+          <div class="text-3xl font-black text-emerald-400 mt-1">42.7%</div>
+          <div class="text-[11px] text-emerald-400 mt-2 flex items-center gap-1">
+            <span>💰</span> $7,784 Annualized Run-Rate
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-emerald-300">[Potential Savings Pct]</code>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-container p-5 border-l-4 border-l-amber-500 relative overflow-hidden">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">ZOMBIE INSTANCES</div>
+          <div class="text-3xl font-black text-amber-400 mt-1">3 <span class="text-sm font-normal text-slate-400">Servers</span></div>
+          <div class="text-[11px] text-amber-300 mt-2 flex items-center gap-1">
+            <span>💀</span> 0% Workload (CPU &lt; 3%)
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-amber-300">[Zombie Server Count]</code>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Middle Visuals Grid (Donut + Column) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        
+        <!-- Left: Donut Chart (5 Cols) -->
+        <div class="lg:col-span-5 card-container p-5 space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-700/60 pb-3">
+            <div>
+              <h2 class="text-xs font-bold text-white uppercase tracking-wider">Spend by Cloud Provider</h2>
+              <p class="text-[11px] text-slate-400">AWS vs. Azure Fleet Distribution</p>
+            </div>
+            <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900 font-mono">Donut Chart</span>
+          </div>
+
+          <!-- SVG Donut Chart -->
+          <div class="flex items-center justify-around py-4">
+            <div class="relative w-36 h-36 flex items-center justify-center">
+              <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                <path class="text-slate-800" stroke-width="5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="text-cyan-400" stroke-dasharray="21.7, 100" stroke-width="5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="text-blue-500" stroke-dasharray="78.3, 100" stroke-dashoffset="-21.7" stroke-width="5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <div class="absolute text-center">
+                <div class="text-base font-black text-white">$3.0K</div>
+                <div class="text-[10px] text-slate-400">Fleet Total</div>
+              </div>
+            </div>
+
+            <!-- Legend Info -->
+            <div class="space-y-3 text-xs">
+              <div class="flex items-center gap-2.5">
+                <div class="w-3 h-3 rounded-full bg-blue-500 shadow-sm"></div>
+                <div>
+                  <div class="font-bold text-white">AWS: $2,347.68</div>
+                  <div class="text-[11px] text-slate-400">78.3% Market Share</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-3 h-3 rounded-full bg-cyan-400 shadow-sm"></div>
+                <div>
+                  <div class="font-bold text-white">Azure: $651.04</div>
+                  <div class="text-[11px] text-slate-400">21.7% Dedicated Nodes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-700/60 flex justify-between font-mono">
+            <span>Legend: <code class="text-cyan-300">cloud_provider</code></span>
+            <span>Values: <code class="text-cyan-300">[Total Fleet Spend]</code></span>
+          </div>
+        </div>
+
+        <!-- Right: Clustered Column Chart (7 Cols) -->
+        <div class="lg:col-span-7 card-container p-5 space-y-4">
+          <div class="flex justify-between items-center border-b border-slate-700/60 pb-3">
+            <div>
+              <h2 class="text-xs font-bold text-white uppercase tracking-wider">Spend vs. Waste by Environment</h2>
+              <p class="text-[11px] text-slate-400">Development Environment Bleeds 100% of its Budget</p>
+            </div>
+            <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900 font-mono">Clustered Column</span>
+          </div>
+
+          <!-- HTML Bar Representations -->
+          <div class="space-y-4 pt-2">
+            
+            <!-- Development -->
+            <div>
+              <div class="flex justify-between text-xs mb-1.5">
+                <span class="font-bold text-amber-400 flex items-center gap-1.5">
+                  <span>🛠️</span> Development (100% WASTED!)
+                </span>
+                <span class="font-bold text-rose-400">$1,279.61 Waste / $1,279.61 Spend</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 h-7">
+                <div class="bg-blue-600 rounded flex items-center justify-between px-3 text-[11px] font-bold text-white">
+                  <span>Spend</span><span>$1,279</span>
+                </div>
+                <div class="bg-rose-500 rounded flex items-center justify-between px-3 text-[11px] font-bold text-white shadow-lg shadow-rose-950">
+                  <span>Waste</span><span>$1,279 (100%)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Production -->
+            <div>
+              <div class="flex justify-between text-xs mb-1.5">
+                <span class="font-bold text-emerald-400 flex items-center gap-1.5">
+                  <span>🚀</span> Production (0% Waste)
+                </span>
+                <span class="text-slate-300">$1,598.07 Spend / $0.00 Waste</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 h-7">
+                <div class="bg-blue-600 rounded flex items-center justify-between px-3 text-[11px] font-bold text-white">
+                  <span>Spend</span><span>$1,598</span>
+                </div>
+                <div class="bg-slate-800 rounded flex items-center px-3 text-[10px] text-slate-500 italic">
+                  $0 Waste (Healthy)
+                </div>
+              </div>
+            </div>
+
+            <!-- Staging -->
+            <div>
+              <div class="flex justify-between text-xs mb-1.5">
+                <span class="font-bold text-slate-300 flex items-center gap-1.5">
+                  <span>🧪</span> Staging (0% Waste)
+                </span>
+                <span class="text-slate-300">$121.04 Spend / $0.00 Waste</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 h-7">
+                <div class="bg-blue-700/80 rounded flex items-center justify-between px-3 text-[11px] font-bold text-white w-2/3">
+                  <span>Spend</span><span>$121</span>
+                </div>
+                <div class="bg-slate-800 rounded flex items-center px-3 text-[10px] text-slate-500 italic">
+                  $0 Waste
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-700/60 flex justify-between font-mono">
+            <span>X-Axis: <code class="text-cyan-300">environment</code></span>
+            <span>Y-Axis: <code class="text-blue-400">[Total Fleet Spend]</code>, <code class="text-rose-400">[Identified Cloud Waste]</code></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Visual: Area Chart Full Width -->
+      <div class="card-container p-5 space-y-3">
+        <div class="flex justify-between items-center border-b border-slate-700/60 pb-3">
+          <div>
+            <h2 class="text-xs font-bold text-white uppercase tracking-wider">60-Day Daily Spend &amp; Waste Accumulation Trend</h2>
+            <p class="text-[11px] text-slate-400">Steady $50/Day Burn Rate with Rising Waste Bleed Line</p>
+          </div>
+          <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900 font-mono">Area / Line Chart</span>
+        </div>
+
+        <!-- SVG Area Chart -->
+        <div class="relative h-32 w-full pt-2">
+          <svg class="w-full h-full" viewBox="0 0 500 100" preserveAspectRatio="none">
+            <!-- Cumulative Waste Shaded Area -->
+            <defs>
+              <linearGradient id="wasteGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#EF4444" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#EF4444" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <polygon fill="url(#wasteGrad)" points="0,95 80,85 160,70 240,55 320,38 400,22 490,5 490,95 0,95" />
+            <polyline fill="none" stroke="#EF4444" stroke-width="2" points="0,95 80,85 160,70 240,55 320,38 400,22 490,5" />
+            <!-- Total Daily Spend Flat Line (~$50/day) -->
+            <polyline fill="none" stroke="#06B6D4" stroke-width="2.5" points="0,50 60,48 120,52 180,49 240,50 300,51 360,48 420,50 490,50" />
+          </svg>
+        </div>
+
+        <div class="flex justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-700/60 font-mono">
+          <span>X-Axis: <code class="text-cyan-300">date</code></span>
+          <span>Blue Line: <code class="text-cyan-300">[Total Fleet Spend]</code> (~$50/day)</span>
+          <span class="text-rose-400 font-bold">Red Curve: <code class="text-rose-300">[Cumulative Wasted Spend]</code> (Reaches $1,279.61)</span>
+        </div>
+      </div>
+
+    </main>
+
+
+    <!-- ============================================================== -->
+    <!-- 📄 PAGE 2: APM & MICROSERVICE RELIABILITY                       -->
+    <!-- ============================================================== -->
+    <main id="page-2" class="space-y-5 hidden">
+      
+      <!-- Top Slicers Bar -->
+      <div class="flex flex-wrap items-center justify-between text-xs text-slate-400 px-1">
+        <div class="flex items-center gap-2">
+          <span class="font-semibold text-slate-300">APM Health Thresholds:</span>
+          <span class="bg-slate-800 px-2.5 py-1 rounded border border-slate-700 text-slate-200">SLA Target: &gt; 99.0%</span>
+          <span class="bg-slate-800 px-2.5 py-1 rounded border border-slate-700 text-slate-200">P95 Latency SLA: &lt; 500ms</span>
+        </div>
+        <div class="text-[11px] text-rose-400">
+          ● 2 Microservices Breaching SLA Standards
+        </div>
+      </div>
+
+      <!-- 4 Top KPI Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="card-container p-5 border-l-4 border-l-amber-500">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">FLEET SLA COMPLIANCE</div>
+          <div class="text-3xl font-black text-amber-400 mt-1">94.3%</div>
+          <div class="text-[11px] text-rose-400 mt-2 font-semibold">⚠️ 993 Total Breach Hours</div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-amber-300">[Fleet SLA Compliance]</code>
+          </div>
+        </div>
+
+        <div class="card-container p-5 border-l-4 border-l-cyan-500">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">AVG P95 LATENCY</div>
+          <div class="text-3xl font-black text-cyan-400 mt-1">103.8 <span class="text-sm font-normal text-slate-400">ms</span></div>
+          <div class="text-[11px] text-cyan-300 mt-2">Peak Spike: 2,400 ms</div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-cyan-300">[Avg P95 Latency]</code>
+          </div>
+        </div>
+
+        <div class="card-container p-5 border-l-4 border-l-rose-500 bg-gradient-to-br from-slate-900 to-rose-950/20">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">TOTAL 5XX ERRORS</div>
+          <div class="text-3xl font-black text-rose-500 mt-1">14,997</div>
+          <div class="text-[11px] text-rose-400 mt-2">HTTP 504 Gateway Timeouts</div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-rose-300">[Total 5xx Errors]</code>
+          </div>
+        </div>
+
+        <div class="card-container p-5 border-l-4 border-l-purple-500">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">COST PER 1M REQUESTS</div>
+          <div class="text-3xl font-black text-purple-400 mt-1">$1.20</div>
+          <div class="text-[11px] text-slate-400 mt-2">Unit Economic Operational Cost</div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-purple-300">[Cost per 1M Requests]</code>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Middle Charts (Service SLA Bar + Payment Gateway Sawtooth Line) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        
+        <!-- Service SLA Bar Chart (6 Cols) -->
+        <div class="lg:col-span-6 card-container p-5 space-y-3">
+          <div class="flex justify-between items-center border-b border-slate-700/60 pb-3">
+            <div>
+              <h2 class="text-xs font-bold text-white uppercase tracking-wider">SLA Compliance by Microservice</h2>
+              <p class="text-[11px] text-slate-400">Pinpoints Underperforming Application Components</p>
+            </div>
+            <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900 font-mono">Clustered Bar</span>
+          </div>
+
+          <div class="space-y-2.5 text-xs pt-1">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-rose-400 font-bold">recommendation-engine (Peak CPU Bottleneck)</span>
+                <span class="text-rose-400 font-bold">50.4%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-4 rounded overflow-hidden">
+                <div class="bg-rose-500 h-full rounded" style="width: 50.4%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-amber-400 font-bold">payment-gateway (Cyclic Memory Leaks)</span>
+                <span class="text-amber-400 font-bold">90.4%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-4 rounded overflow-hidden">
+                <div class="bg-amber-500 h-full rounded" style="width: 90.4%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-emerald-400 font-semibold">auth-service (High Load Mission-Critical)</span>
+                <span class="text-emerald-400 font-bold">100.0%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-4 rounded overflow-hidden">
+                <div class="bg-emerald-500 h-full rounded" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-emerald-400 font-semibold">orders-db &amp; catalog-api</span>
+                <span class="text-emerald-400 font-bold">100.0%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-4 rounded overflow-hidden">
+                <div class="bg-emerald-500 h-full rounded" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-700/60 flex justify-between font-mono">
+            <span>Y-Axis: <code class="text-cyan-300">service_name</code></span>
+            <span>X-Axis: <code class="text-cyan-300">[Fleet SLA Compliance]</code></span>
+          </div>
+        </div>
+
+        <!-- Payment Gateway Sawtooth Wave (6 Cols) -->
+        <div class="lg:col-span-6 card-container p-5 space-y-3">
+          <div class="flex justify-between items-center border-b border-slate-700/60 pb-3">
+            <div>
+              <h2 class="text-xs font-bold text-white uppercase tracking-wider">Payment-Gateway: Memory Leak Sawtooth Wave</h2>
+              <p class="text-[11px] text-slate-400">RAM creeps from 42% to 92% causing OOM Crash &amp; 504 Spikes</p>
+            </div>
+            <span class="text-[10px] text-rose-400 bg-rose-950/60 px-2 py-0.5 rounded border border-rose-900 font-mono">Line Chart</span>
+          </div>
+
+          <!-- Repeating Sawtooth Wave SVG -->
+          <div class="relative h-32 w-full pt-2">
+            <svg class="w-full h-full" viewBox="0 0 400 80" preserveAspectRatio="none">
+              <!-- Grid lines -->
+              <line x1="0" y1="20" x2="400" y2="20" stroke="#334155" stroke-dasharray="3" />
+              <line x1="0" y1="50" x2="400" y2="50" stroke="#334155" stroke-dasharray="3" />
+              
+              <!-- Sawtooth Memory Trend -->
+              <polyline fill="none" stroke="#06B6D4" stroke-width="2.5" points="0,60 70,15 72,70 140,15 142,70 210,15 212,70 280,15 282,70 350,15 352,70 400,30" />
+              <!-- Latency Spike Markers -->
+              <circle cx="70" cy="15" r="4" fill="#EF4444" />
+              <circle cx="140" cy="15" r="4" fill="#EF4444" />
+              <circle cx="210" cy="15" r="4" fill="#EF4444" />
+              <circle cx="280" cy="15" r="4" fill="#EF4444" />
+              <circle cx="350" cy="15" r="4" fill="#EF4444" />
+            </svg>
+          </div>
+
+          <div class="flex justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-700/60 font-mono">
+            <span>Filter on visual: <code class="text-amber-300">service_name = payment-gateway</code></span>
+            <span>Red Dots: <code class="text-rose-400">Crash &amp; Restart Spike</code></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom: Total 5xx Errors by Service -->
+      <div class="card-container p-5 space-y-3">
+        <div class="flex justify-between items-center border-b border-slate-700/60 pb-3">
+          <div>
+            <h2 class="text-xs font-bold text-white uppercase tracking-wider">Total HTTP 5xx Server Errors by Microservice</h2>
+            <p class="text-[11px] text-slate-400">92% of Total Fleet Errors are Concentrated in 2 Problematic Services</p>
+          </div>
+          <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900 font-mono">Clustered Column</span>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+          <div class="bg-rose-950/40 border border-rose-800/80 p-3.5 rounded-xl">
+            <div class="text-[11px] text-rose-300 font-bold">recommendation-engine</div>
+            <div class="text-2xl font-extrabold text-rose-500 mt-1">9,354 <span class="text-xs font-normal">errors</span></div>
+            <div class="text-[10px] text-slate-400 mt-1">CPU saturated during peak hours</div>
+          </div>
+
+          <div class="bg-amber-950/40 border border-amber-800/80 p-3.5 rounded-xl">
+            <div class="text-[11px] text-amber-300 font-bold">payment-gateway</div>
+            <div class="text-2xl font-extrabold text-amber-500 mt-1">4,431 <span class="text-xs font-normal">errors</span></div>
+            <div class="text-[10px] text-slate-400 mt-1">OOM restart gateway timeouts</div>
+          </div>
+
+          <div class="bg-slate-800/50 border border-slate-700 p-3.5 rounded-xl">
+            <div class="text-[11px] text-slate-300">auth-service</div>
+            <div class="text-2xl font-bold text-slate-200 mt-1">682 <span class="text-xs font-normal">errors</span></div>
+            <div class="text-[10px] text-emerald-400 mt-1">&lt; 0.05% error rate</div>
+          </div>
+
+          <div class="bg-slate-800/50 border border-slate-700 p-3.5 rounded-xl">
+            <div class="text-[11px] text-slate-300">All Other 7 Services</div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1">530 <span class="text-xs font-normal">errors</span></div>
+            <div class="text-[10px] text-emerald-400 mt-1">Healthy baseline</div>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-700/60 flex justify-between font-mono">
+          <span>X-Axis: <code class="text-cyan-300">service_name</code></span>
+          <span>Y-Axis: <code class="text-rose-400">[Total 5xx Errors]</code></span>
+        </div>
+      </div>
+
+    </main>
+
+
+    <!-- ============================================================== -->
+    <!-- 📄 PAGE 3: ZOMBIE SERVER ACTION CENTER                          -->
+    <!-- ============================================================== -->
+    <main id="page-3" class="space-y-5 hidden">
+      
+      <!-- Action Banner -->
+      <div class="card-container p-5 border border-rose-500/40 bg-gradient-to-r from-slate-900 via-rose-950/30 to-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 shadow-xl">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="text-rose-400 text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
+              <span>🎯</span> DEVOPS DECOMMISSION HIT-LIST
+            </span>
+            <span class="bg-rose-500/20 text-rose-300 text-[10px] px-2 py-0.5 rounded border border-rose-500/30 font-semibold">Immediate Action Required</span>
+          </div>
+          <h2 class="text-xl font-bold text-white">Guaranteed $7,784/Year Direct Infrastructure Savings</h2>
+          <p class="text-xs text-slate-300">Decommissioning these 3 idle development servers eliminates waste with zero impact on production user traffic.</p>
+        </div>
+        <div class="text-right bg-slate-900/80 px-4 py-2.5 rounded-xl border border-rose-900/50">
+          <div class="text-[11px] text-slate-400 uppercase font-semibold">Total Recoverable Waste</div>
+          <div class="text-2xl font-black text-rose-400 mt-0.5">$1,279.61</div>
+          <div class="text-[10px] text-emerald-400 font-semibold">↑ $7,784.00 Annualized Run-Rate</div>
+        </div>
+      </div>
+
+      <!-- Top 2 Action Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="card-container p-5 border-l-4 border-l-emerald-500">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">ANNUALIZED RUN-RATE SAVINGS</div>
+          <div class="text-3xl font-black text-emerald-400 mt-1">$7,784 <span class="text-sm font-normal text-slate-400">/ Year</span></div>
+          <div class="text-[11px] text-slate-400 mt-1.5">Formula: [Identified Waste] × (365 / 60)</div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-emerald-300">[Annualized Waste Savings]</code>
+          </div>
+        </div>
+
+        <div class="card-container p-5 border-l-4 border-l-cyan-500">
+          <div class="text-xs text-slate-400 font-semibold tracking-wider">FLEET EFFICIENCY SCORE</div>
+          <div class="text-3xl font-black text-cyan-400 mt-1">57.3%</div>
+          <div class="text-[11px] text-slate-400 mt-1.5">Projected to Reach 100% Post-Decommission</div>
+          <div class="mt-3 pt-2 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+            DAX: <code class="text-cyan-300">[Fleet Efficiency Score]</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Core Table Visual -->
+      <div class="card-container p-5 space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-700/60 pb-3">
+          <div>
+            <h2 class="text-xs font-bold text-white uppercase tracking-wider">Idle Zombie Instances Audit Table</h2>
+            <p class="text-[11px] text-slate-400">Servers with CPU &lt; 5% Continuously Running for 60 Days</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] text-rose-300 bg-rose-950/80 px-2.5 py-1 rounded border border-rose-800 font-mono">Filter: is_idle_zombie = 1</span>
+            <span class="text-[10px] text-cyan-400 bg-cyan-950/60 px-2 py-1 rounded border border-cyan-900 font-mono">Table Visual</span>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-slate-700 text-slate-400 font-semibold bg-slate-900/80">
+                <th class="p-3">Instance ID</th>
+                <th class="p-3">Service Name</th>
+                <th class="p-3">Environment</th>
+                <th class="p-3">Instance Type</th>
+                <th class="p-3 text-right">Hourly Cost</th>
+                <th class="p-3 text-right text-rose-400 font-bold">60-Day Waste ($)</th>
+                <th class="p-3 text-right text-emerald-400 font-bold">Annual Savings ($)</th>
+                <th class="p-3 text-center">DevOps Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 font-mono">
+              <tr class="hover:bg-slate-800/50 transition-colors">
+                <td class="p-3 text-cyan-300 font-bold">i-dev-sandbox-ml</td>
+                <td class="p-3 text-white">ml-experiments</td>
+                <td class="p-3 text-amber-300">Development</td>
+                <td class="p-3 text-slate-300">r5.2xlarge</td>
+                <td class="p-3 text-right text-slate-300">$0.504</td>
+                <td class="p-3 text-right text-rose-400 font-black text-sm">$726.26</td>
+                <td class="p-3 text-right text-emerald-400 font-black text-sm">$4,418.00</td>
+                <td class="p-3 text-center">
+                  <span class="bg-rose-950 text-rose-300 px-2.5 py-1 rounded-md border border-rose-800 font-sans font-bold text-[10px] tracking-wide">
+                    TERMINATE NOW
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-slate-800/50 transition-colors">
+                <td class="p-3 text-cyan-300 font-bold">i-dev-test01</td>
+                <td class="p-3 text-white">qa-testing</td>
+                <td class="p-3 text-amber-300">Development</td>
+                <td class="p-3 text-slate-300">m5.xlarge</td>
+                <td class="p-3 text-right text-slate-300">$0.192</td>
+                <td class="p-3 text-right text-rose-400 font-black text-sm">$276.67</td>
+                <td class="p-3 text-right text-emerald-400 font-black text-sm">$1,683.00</td>
+                <td class="p-3 text-center">
+                  <span class="bg-rose-950 text-rose-300 px-2.5 py-1 rounded-md border border-rose-800 font-sans font-bold text-[10px] tracking-wide">
+                    TERMINATE NOW
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-slate-800/50 transition-colors">
+                <td class="p-3 text-cyan-300 font-bold">vm-dev-legacy01</td>
+                <td class="p-3 text-white">legacy-sync</td>
+                <td class="p-3 text-amber-300">Development</td>
+                <td class="p-3 text-slate-300">Standard_D4s_v5</td>
+                <td class="p-3 text-right text-slate-300">$0.192</td>
+                <td class="p-3 text-right text-rose-400 font-black text-sm">$276.67</td>
+                <td class="p-3 text-right text-emerald-400 font-black text-sm">$1,683.00</td>
+                <td class="p-3 text-center">
+                  <span class="bg-rose-950 text-rose-300 px-2.5 py-1 rounded-md border border-rose-800 font-sans font-bold text-[10px] tracking-wide">
+                    TERMINATE NOW
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="bg-slate-900 text-white font-bold border-t-2 border-slate-700">
+                <td class="p-3" colspan="5">TOTAL ACTIONABLE WASTE RECOVERY:</td>
+                <td class="p-3 text-right text-rose-400 text-base font-black">$1,279.61</td>
+                <td class="p-3 text-right text-emerald-400 text-base font-black">$7,784.00</td>
+                <td class="p-3 text-center text-[10px] text-emerald-400">3 Instances</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-700/60 font-mono">
+          <span>Table Columns: <code class="text-cyan-300">instance_id, service_name, environment, instance_type, hourly_cost_usd, [Instance Wasted Spend], [Instance Annualized Waste]</code></span>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script>
+    function navigatePage(pageNum) {
+      // Hide all pages
+      document.getElementById('page-1').classList.add('hidden');
+      document.getElementById('page-2').classList.add('hidden');
+      document.getElementById('page-3').classList.add('hidden');
+
+      // Reset tabs styling
+      document.getElementById('tab-btn-1').className = 'nav-btn-inactive px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition-all';
+      document.getElementById('tab-btn-2').className = 'nav-btn-inactive px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition-all';
+      document.getElementById('tab-btn-3').className = 'nav-btn-inactive px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition-all';
+
+      // Show selected page
+      document.getElementById('page-' + pageNum).classList.remove('hidden');
+      document.getElementById('tab-btn-' + pageNum).className = 'nav-btn-active px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition-all';
+    }
+  </script>
+</body>
+</html>
