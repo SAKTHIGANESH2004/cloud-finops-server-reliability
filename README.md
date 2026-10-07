@@ -1,9 +1,10 @@
 # ☁️ Enterprise Cloud FinOps & Infrastructure Reliability Analytics Platform
+### *An End-to-End Enterprise Analytics Suite: Python ETL ➔ SQL Star Schema ➔ Excel FinOps ➔ Power BI Observability*
 
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![PostgreSQL & SQLite](https://img.shields.io/badge/SQL-Star_Schema-CC292B?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
-[![Power BI](https://img.shields.io/badge/Power_BI-3_Page_Executive_Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
-[![Microsoft Excel](https://img.shields.io/badge/Excel-Financial_What--If_Model-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://www.microsoft.com/excel)
+[![Python Pipeline](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](python/)
+[![SQL Star Schema](https://img.shields.io/badge/SQL-Star_Schema-CC292B?style=for-the-badge&logo=postgresql&logoColor=white)](sql/)
+[![Power BI](https://img.shields.io/badge/Power_BI-3_Page_Executive_Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](Cloud_Enterprise_FinOps.pbix)
+[![Excel FinOps](https://img.shields.io/badge/Excel-Financial_What--If_Model-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](excel/cloud_finops_capacity_model.xlsx)
 [![Domain: FinOps](https://img.shields.io/badge/Domain-Cloud_FinOps_&_APM-0EA5E9?style=for-the-badge)](https://www.finops.org/)
 
 > An end-to-end enterprise Data Analytics platform analyzing **17,292 hourly multi-cloud telemetry and billing records** across AWS & Azure. Built from scratch to detect idle compute cost leakage, diagnose microservice reliability bottlenecks, and model long-term infrastructure savings.
@@ -11,27 +12,142 @@
 ---
 
 ## 👨‍💻 Project Author
-* **Author:** SAKTHIGANESH K
+* **Author:** **SAKTHIGANESH K**
 * **Education:** B.E. Computer Science & Engineering (2025)
 * **Role Focus:** Associate Data Analyst | Business Intelligence & Cloud Analytics
-* **Links:** [LinkedIn Profile](https://linkedin.com/in/sakthiganesh) | [GitHub Portfolio](https://github.com/sakthiganesh) | [Email](mailto:sakthiganeshk27@gmail.com)
+* **Links:** [LinkedIn Profile](https://www.linkedin.com) | [GitHub Portfolio](https://github.com/SAKTHIGANESH2004) | [Email](mailto:sakthiganeshk27@gmail.com)
+
+---
+
+## 📂 Quick Access to Project Source Code & Models
+
+Click any link below to jump directly to the exact source scripts and analytical models in this repository:
+
+| Module | Core Deliverable | Direct Repository Path |
+| :--- | :--- | :--- |
+| 🐍 **Python ETL & Data Pipeline** | Synthetic telemetry generator & EDA cleaning | [📁 `python/`](python/) |
+| 🗄️ **SQL Modeling & Queries** | Star Schema DDL, Cost Leakage & RCA Queries | [📁 `sql/`](sql/) |
+| 📊 **Power BI Analytics Model** | 3-Page Dark-Mode Executive Dashboard | [💾 `Cloud_Enterprise_FinOps.pbix`](Cloud_Enterprise_FinOps.pbix) |
+| 📑 **Excel Financial Model** | 3-Page Interactive What-If Capacity Model | [📊 `excel/cloud_finops_capacity_model.xlsx`](excel/cloud_finops_capacity_model.xlsx) |
+| 🗃️ **Cleaned Cloud Telemetry Data** | Raw, Cleaned CSV & SQLite Database | [📁 `data/`](data/) |
 
 ---
 
 ## 📌 Executive Summary & Business Impact
 
-Modern technology organizations running microservices across multi-cloud environments (AWS & Azure) frequently face two critical operational challenges:
-1. **Uncontrolled Cloud Spend Inflation (Cloud Waste):** Idle test/sandbox compute resources left running continuously after sprint cycles.
-2. **Silent Reliability Degradation:** Memory leaks and CPU throttling that trigger SLA breaches and API error spikes before DevOps teams notice.
+Modern enterprise multi-cloud environments suffer from severe capital waste due to unmonitored non-production infrastructure and unhandled cascading microservice latency bottlenecks. 
 
-This platform bridges raw infrastructure telemetry with executive decision-making through an automated data pipeline, relational star schema, 3-page dark-themed Power BI suite, and financial sensitivity modeling in Excel.
+This analytical platform models **17,292 hourly logs** across AWS and Azure infrastructure over a 60-day billing cycle:
 
-### 🎯 Key Quantifiable Outcomes
-* **$1,279.61 in Direct Waste Identified (42.7% of total 60-day bill):** Discovered 3 abandoned development servers running 24/7 with < 3% CPU utilization.
-* **$7,784 / Year Guaranteed Recurring Savings:** Modeled immediate decommission roadmap with **zero impact** on live production workloads.
-* **Root-Cause Diagnosis of 278-Hour Memory Leak:** Isolated a cyclic sawtooth RAM leak in `payment-gateway` (RAM climbing from 35% to 92%), causing severe P95 latency spikes (1,139 ms) and 5xx errors.
-* **$1,972 / Year Reserved Instance (RI) Optimization:** Built a What-If sensitivity model in Excel proving that committing 80% baseline compute to 1-Year RIs reduces compute costs by 30.4%.
+* **💰 Total 60-Day Fleet Spend:** **$2,998.72**
+* **🚨 Identified Cloud Waste:** **$1,279.61** (42.7% of total budget wasted on idle workloads)
+* **🧟 Zombie Servers Identified:** **3 Unutilized Development Servers** running 24/7 with zero productive traffic.
+* **📈 Addressable Annual Cost Recovery:** **$19,067 / Year** via automated decommissioning, staging rightsizing, and 1-Year Reserved Instances (RI).
+* **⚡ SRE Outage Triaging:** Diagnosed an unhandled **Heap Memory Leak in `payment-gateway`** causing a 993-hour SLA breach and **14,702 HTTP 5xx error spikes** on AWS Production.
 
 ---
 
-## 🏗️ End-to-End Pipeline Architecture
+## 🏗️ Technical Architecture & Pipeline
+
+```
+  ┌─────────────────────────────────┐
+  │  17,292 Multi-Cloud Server Logs │  (AWS EC2 & Azure VMs across 60 Days)
+  └────────────────┬────────────────┘
+                   │
+                   ▼  [Python ETL: Pandas & NumPy]
+  ┌─────────────────────────────────┐
+  │   Data Cleansing & Outliers     │  (Imputation, Datetime Splitting, Telemetry Normalization)
+  └────────────────┬────────────────┘
+                   │
+                   ▼  [Relational SQL & Star Schema]
+  ┌─────────────────────────────────┐
+  │  Fact & Dimension Data Modeling │  (Fact_Telemetry, Dim_Server, Dim_Service, Dim_Date)
+  └────────────────┬────────────────┘
+                   │
+          ┌────────┴────────┐
+          ▼                 ▼
+  ┌───────────────┐ ┌───────────────┐
+  │   Microsoft   │ │   Power BI    │
+  │   Excel 365   │ │   Desktop     │
+  │ (What-If ROI) │ │ (Dark APM UI) │
+  └───────────────┘ └───────────────┘
+```
+
+---
+
+## 📊 Analytical Deep Dive (3 Core Modules)
+
+### 1️⃣ Module 1: Executive FinOps Overview
+* **Donut Fleet Distribution:** Analyzed $2,070.72 AWS vs. $928.00 Azure infrastructure spend.
+* **Environment Cost Bleed:** Uncovered that the **Development environment bled 100% of its budget ($1,280.00)** with <3% CPU utilization.
+* **60-Day Daily Burn Rate:** Tracked steady $50/day fleet spend with an elevated $21.31/day waste bleed line.
+
+### 2️⃣ Module 2: Application Performance Monitoring (APM) & SRE Observability
+* **Microservice SLA Compliance:** Flagged `payment-gateway` (80% compliance) and `recommendation-engine` (50% compliance) breaching enterprise 99.9% uptime targets.
+* **Memory Leak Sawtooth Pattern:** Isolated an escalating memory consumption pattern from 45% up to 95% RAM saturation triggering automated container crash-restarts.
+* **Error Outage Concentration:** Isolated 14,702 HTTP 5xx server errors localized exclusively to AWS Production workloads.
+
+### 3️⃣ Module 3: DevOps Zombie Resource Audit & Action Center
+* **Action Matrix Breakdown:**
+  * ⛔ **TERMINATE NOW:** 3 idle servers (`i-dev-sandbox-ml`, `i-dev-test01`, `vm-dev-legacy01`) recovering **$9,667 / year**.
+  * ⚡ **CONVERT TO 1-YR RI:** 3 steady-state production workloads saving **$1,989.29 (32% discount)**.
+  * ✔ **KEEP ON-DEMAND:** 6 variable staging & ephemeral notification microservices.
+
+---
+
+## 🗄️ SQL Star Schema Architecture
+
+```sql
+-- Fact Table
+CREATE TABLE fact_server_telemetry (
+    telemetry_id INTEGER PRIMARY KEY,
+    date_id INTEGER,
+    instance_id TEXT,
+    service_id INTEGER,
+    cpu_utilization_pct REAL,
+    memory_utilization_pct REAL,
+    http_5xx_errors INTEGER,
+    hourly_cost_usd REAL,
+    is_idle_zombie INTEGER,
+    wasted_cost_usd REAL,
+    sla_breached INTEGER
+);
+```
+
+---
+
+## 📈 Financial Recovery Levers
+
+```text
++------------------------------------+-------------------+-----------------------+
+|  FINOPS OPTIMIZATION LEVER         |  MONTHLY SAVINGS  |  ANNUAL RECOVERED ROI |
++------------------------------------+-------------------+-----------------------+
+|  Zombie Dev Server Decommission    |  $805.60 / mo     |  $9,667.20 / yr       |
+|  Staging Instance Rightsizing      |  $440.00 / mo     |  $5,280.00 / yr       |
+|  Production 1-Year RI Commitments  |  $343.33 / mo     |  $4,120.00 / yr       |
++------------------------------------+-------------------+-----------------------+
+|  TOTAL ADDRESSABLE FINOPS SAVINGS  |  $1,588.93 / mo   |  $19,067.20 / YR      |
++------------------------------------+-------------------+-----------------------+
+```
+
+---
+
+## 💻 Local Setup & Execution
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SAKTHIGANESH2004/cloud-finops-server-reliability.git
+   ```
+2. Navigate into the repository:
+   ```bash
+   cd cloud-finops-server-reliability
+   ```
+3. Run Python EDA & ETL pipeline:
+   ```bash
+   python python/02_data_cleaning_eda.py
+   ```
+4. Open `Cloud_Enterprise_FinOps.pbix` in **Power BI Desktop** or explore `excel/cloud_finops_capacity_model.xlsx` in **Microsoft Excel**.
+
+---
+
+⭐ *If you find this project insightful, please consider starring the repository!*
