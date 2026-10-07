@@ -1,12 +1,9 @@
 # ☁️ Enterprise Cloud FinOps & Infrastructure Reliability Analytics Platform
 ### *An End-to-End Enterprise Analytics Suite: Python ETL ➔ SQL Star Schema ➔ Excel FinOps ➔ Power BI Observability*
 
-[![Python Pipeline](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](python/)
-[![SQL Star Schema](https://img.shields.io/badge/SQL-Star_Schema-CC292B?style=for-the-badge&logo=postgresql&logoColor=white)](sql/)
-[![Power BI](https://img.shields.io/badge/Power_BI-3_Page_Executive_Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](Cloud_Enterprise_FinOps.pbix)
-[![Excel FinOps](https://img.shields.io/badge/Excel-Financial_What--If_Model-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](excel/cloud_finops_capacity_model.xlsx)
-[![Domain: FinOps](https://img.shields.io/badge/Domain-Cloud_FinOps_&_APM-0EA5E9?style=for-the-badge)](https://www.finops.org/)
-
+[![Power BI Model](https://img.shields.io/badge/POWER_BI-3_PAGE_EXECUTIVE_DASHBOARD-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](Cloud_Enterprise_FinOps.pbix)
+[![Excel FinOps Model](https://img.shields.io/badge/EXCEL-FINANCIAL_WHAT--IF_MODEL-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](excel/cloud_finops_capacity_model.xlsx)
+[![Live Interactive Dashboard](https://img.shields.io/badge/LIVE_DEMO-EXCEL_ONLINE_DASHBOARD-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://1drv.ms/x/c/8603EE4E860307AB/IQDrQR2m8Y1HR76VquE5YVwGASKdlwENcyOvX0_FDv-EEQE?e=UhFmj2)
 > An end-to-end enterprise Data Analytics platform analyzing **17,292 hourly multi-cloud telemetry and billing records** across AWS & Azure. Built from scratch to detect idle compute cost leakage, diagnose microservice reliability bottlenecks, and model long-term infrastructure savings.
 
 ---
