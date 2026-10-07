@@ -1,10 +1,14 @@
 # ☁️ Enterprise Cloud FinOps & Infrastructure Reliability Analytics Platform
-### *An End-to-End Enterprise Analytics Suite: Python ETL ➔ SQL Star Schema ➔ Excel FinOps ➔ Power BI Observability*
+### *An End-to-End Analytics Suite: Python Simulation ETL ➔ SQL Star Schema ➔ Excel FinOps ➔ Power BI Observability*
 
-[![Power BI Model](https://img.shields.io/badge/POWER_BI-3_PAGE_EXECUTIVE_DASHBOARD-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](Cloud_Enterprise_FinOps.pbix)
-[![Excel FinOps Model](https://img.shields.io/badge/EXCEL-FINANCIAL_WHAT--IF_MODEL-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](excel/cloud_finops_capacity_model.xlsx)
+[![Python Pipeline](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](python/)
+[![SQL Star Schema](https://img.shields.io/badge/SQL-Star_Schema-CC292B?style=for-the-badge&logo=postgresql&logoColor=white)](sql/)
+[![Power BI Report](https://img.shields.io/badge/POWER_BI-3_PAGE_EXECUTIVE_REPORT-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](power_bi/Enterprise_Cloud_FinOps_PowerBI_Report.pdf)
+[![Excel FinOps](https://img.shields.io/badge/Excel-Financial_What--If_Model-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](excel/cloud_finops_capacity_model.xlsx)
 [![Live Interactive Dashboard](https://img.shields.io/badge/LIVE_DEMO-EXCEL_ONLINE_DASHBOARD-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://1drv.ms/x/c/8603EE4E860307AB/IQDrQR2m8Y1HR76VquE5YVwGASKdlwENcyOvX0_FDv-EEQE?e=UhFmj2)
-> An end-to-end enterprise Data Analytics platform analyzing **17,292 hourly multi-cloud telemetry and billing records** across AWS & Azure. Built from scratch to detect idle compute cost leakage, diagnose microservice reliability bottlenecks, and model long-term infrastructure savings.
+[![Domain: FinOps](https://img.shields.io/badge/Domain-Cloud_FinOps_&_APM-0EA5E9?style=for-the-badge)](https://www.finops.org/)
+
+> An end-to-end enterprise Data Analytics platform powered by a **custom Python telemetry simulation engine** that models **17,292 hourly multi-cloud logs (AWS CloudWatch & Azure Monitor patterns)** across a 60-day billing cycle to detect idle compute cost leakage, diagnose memory leak anomalies, and model FinOps cost recovery.
 
 ---
 
@@ -18,15 +22,28 @@
 
 ## 📂 Quick Access to Project Source Code & Models
 
-Click any link below to jump directly to the exact source scripts and analytical models in this repository:
+Click any asset below to directly view the source code, raw data, and dashboards in this repository:
 
-| Module | Core Deliverable | Direct Repository Path |
+| Module | Core Deliverable | Direct Repository Link (Click to Open) |
 | :--- | :--- | :--- |
+| 🗃️ **Raw & Cleaned Dataset** | 17,292-Row Full CSV Telemetry Data | [📁 `excel/cleaned_cloud_finops_data.csv`](excel/cleaned_cloud_finops_data.csv) |
 | 🐍 **Python ETL & Data Pipeline** | Synthetic telemetry generator & EDA cleaning | [📁 `python/`](python/) |
 | 🗄️ **SQL Modeling & Queries** | Star Schema DDL, Cost Leakage & RCA Queries | [📁 `sql/`](sql/) |
-| 📊 **Power BI Analytics Model** | 3-Page Dark-Mode Executive Dashboard | [💾 `Cloud_Enterprise_FinOps.pbix`](Cloud_Enterprise_FinOps.pbix) |
-| 📑 **Excel Financial Model** | 3-Page Interactive What-If Capacity Model | [📊 `excel/cloud_finops_capacity_model.xlsx`](excel/cloud_finops_capacity_model.xlsx) |
-| 🗃️ **Cleaned Cloud Telemetry Data** | Raw, Cleaned CSV & SQLite Database | [📁 `data/`](data/) |
+| 📊 **Power BI Visual Report** | 3-Page Executive Dark-Mode PDF Report | [📑 View Power BI Report (PDF)](power_bi/Enterprise_Cloud_FinOps_PowerBI_Report.pdf) |
+| 📈 **Power BI Model File** | Raw Power BI Data Model File | [💾 Download `Cloud_Enterprise_FinOps.pbix`](Cloud_Enterprise_FinOps.pbix) |
+| 📑 **Excel Financial Model** | 3-Page What-If Capacity Model (.xlsx) | [📊 Download `excel/cloud_finops_capacity_model.xlsx`](excel/cloud_finops_capacity_model.xlsx) |
+| 🌐 **Live Cloud Demo** | Interactive Web Browser Dashboard | [🚀 Launch Excel Online Interactive Dashboard](https://1drv.ms/x/c/8603EE4E860307AB/IQDrQR2m8Y1HR76VquE5YVwGASKdlwENcyOvX0_FDv-EEQE?e=UhFmj2) |
+
+---
+
+## 🧪 Telemetry Generation Methodology (Python Simulation Engine)
+
+To replicate enterprise cloud environments without violating corporate NDAs or PII data privacy, a custom Python pipeline (`python/01_generate_telemetry_data.py`) was engineered to simulate realistic multi-cloud infrastructure behaviors:
+
+* **Diurnal Traffic Curves:** Realistic daytime peak loads and nighttime drops modeled with sine-wave mathematical variations.
+* **Zombie Server Simulation:** Non-production instances idling continuously at <5% CPU/RAM across 60 days.
+* **Memory Leak Injection:** An escalating heap allocation pattern in `payment-gateway` (45% to 95% RAM saturation) triggering automated container crash-restarts and 5xx cascading failures.
+* **Multi-Cloud Billing Math:** Accurate AWS On-Demand vs. Reserved Instance (RI) hourly blended pricing models.
 
 ---
 
@@ -48,7 +65,7 @@ This analytical platform models **17,292 hourly logs** across AWS and Azure infr
 
 ```
   ┌─────────────────────────────────┐
-  │  17,292 Multi-Cloud Server Logs │  (AWS EC2 & Azure VMs across 60 Days)
+  │  17,292 Multi-Cloud Server Logs │  (Synthetic Simulation: AWS EC2 & Azure VMs)
   └────────────────┬────────────────┘
                    │
                    ▼  [Python ETL: Pandas & NumPy]
@@ -139,8 +156,9 @@ CREATE TABLE fact_server_telemetry (
    ```bash
    cd cloud-finops-server-reliability
    ```
-3. Run Python EDA & ETL pipeline:
+3. Run Python Data Generation & EDA pipeline:
    ```bash
+   python python/01_generate_telemetry_data.py
    python python/02_data_cleaning_eda.py
    ```
 4. Open `Cloud_Enterprise_FinOps.pbix` in **Power BI Desktop** or explore `excel/cloud_finops_capacity_model.xlsx` in **Microsoft Excel**.
