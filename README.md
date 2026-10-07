@@ -4,7 +4,7 @@
 [![Python Pipeline](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](python/)
 [![SQL Star Schema](https://img.shields.io/badge/SQL-Star_Schema-CC292B?style=for-the-badge&logo=postgresql&logoColor=white)](sql/)
 [![Power BI Report](https://img.shields.io/badge/POWER_BI-3_PAGE_EXECUTIVE_REPORT-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](Power_bi/Enterprise_Cloud_FinOps_PowerBI_Report.pdf)
-[![Excel FinOps](https://img.shields.io/badge/Excel-Financial_What--If_Model-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](excel/cloud_finops_capacity_model.xlsx)
+[![Excel FinOps](https://img.shields.io/badge/Excel-Financial_What--If_Model-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://1drv.ms/x/c/8603EE4E860307AB/IQD6yuCEn6UARpHHvkH9hklAASLiAYWIPlWbj1hwGuz5rls?e=a05bir)
 [![Live Interactive Dashboard](https://img.shields.io/badge/LIVE_DEMO-EXCEL_ONLINE_DASHBOARD-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://1drv.ms/x/c/8603EE4E860307AB/IQDrQR2m8Y1HR76VquE5YVwGASKdlwENcyOvX0_FDv-EEQE?e=UhFmj2)
 [![Domain: FinOps](https://img.shields.io/badge/Domain-Cloud_FinOps_&_APM-0EA5E9?style=for-the-badge)](https://www.finops.org/)
 
